@@ -1,20 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&family=Josefin+Sans:ital,wght@0,200;0,300;0,400;1,400&family=Mulish:ital,wght@0,200;0,300;0,400;0,600;1,200&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css);
 
-
-*{
+* {
     margin: 0px;
     padding: 0px;
     list-style: none;
     text-decoration: none;
-
+    box-sizing: border-box;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
+body{
+    max-width: 100%;
+}
+
 :root {
-    --font-primary: "Baloo 2", serif ;
+    --font-primary: "Baloo 2", serif;
     --font-secundary: "Josefin Sans", serif;
     --font-action: "Mulish:ital", serif;
 }
@@ -30,54 +34,57 @@ html{
     flex-direction: column;
     justify-content: space-around;
     cursor: pointer;
-    animation: movebanner 1s;
+    animation: movebanner 1s; 
     z-index: 500;
 }
+
 *.line {
     width: 100%;
     background-color: white;
     height: 7%;
-    box-shadow: 0.2rem 0.3rem 2px;
-    transition: transform 1s;
-      
+    box-shadow: 0.1rem 0.1rem 3px;
+    transition: transform 1.2s;
+
 }
-.show-menu #line2{
+
+.show-menu #line2 {
     opacity: 0;
     visibility: hidden;
 }
-.show-menu #line3{
-    transform: rotate(50deg) translate(-1.1rem, -1.5rem);
+
+.show-menu #line3 {
+    transform: rotate(35deg) translate(-.9rem, -1.5rem);
+    background: black;
 }
-.show-menu #line1{
-    transform: rotate(-50deg) translate(.1rem, -0.10rem);
+
+.show-menu #line1 {
+    transform: rotate(-40deg) translate(.26rem, -0.2rem);
+    background: black;
 }
-.hamburguer span{
+
+.hamburguer span {
     position: absolute;
     left: 2.5rem;
     background-color: royalblue;
-    padding: 7px;
-    width: 45px;
+    padding: .5rem;
+    width: 3rem;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     color: whitesmoke;
-    font-family:var(--font-secundary);
+    font-family: var(--font-secundary);
     opacity: 0;
 }
-.hamburguer span:before{
+
+.hamburguer span:before {
     content: "";
     position: absolute;
 
 }
-.show-menu .hamburguer:hover span{
+
+.show-menu .hamburguer:hover span {
     opacity: 1;
-}
- .img-wrapper {
-     width:100%;
-     min-width: 100%;
-     height: 100%;
-     overflow: hidden;
-     background-color: rgb(13, 13, 32);   
+    background: royalblue;
 }
 
 header {
@@ -87,42 +94,31 @@ header {
     position: relative;
 }
 
-.img-wrapper img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.4;
-    animation: zoom 10s; timing-function delay iteration-count direction fill-mode;
-}
 @keyframes zoom {
-    0%{
+    0% {
         transform: scale(1.5);
     }
-    100%{
+
+    100% {
         transform: scale(1);
     }
 
 
 }
-.banner {
-    position: absolute;
-    width: 100%;
-    left: 200px;
-    top: 200px;
-    right: 500px;
 
-}
 @keyframes movebanner {
-    0%{
+    0% {
         transform: translateY(15rem) rotateY(-30deg);
         opacity: 0.1;
     }
-    100%{
+
+    100% {
         transform: translateY(0.1rem) rotateY(0deg);
 
-        
+
     }
 }
+
 .sidebar {
     width: 20rem;
     height: 100vh;
@@ -134,35 +130,42 @@ header {
     z-index: 490;
 
 }
-.show-menu .sidebar{
+
+.show-menu .sidebar {
     right: 0rem;
 }
-.show-menu .hamburguer{
+
+.show-menu .hamburguer {
     right: 15rem;
     transition: 2s;
-    
+
 }
+
 .menu {
     position: absolute;
     top: 25%;
     left: 25%;
-    transform: translateX(-50%,-50%);
-        
+    transform: translateX(-50%, -50%);
+
 }
+
 .menu-item {
     text-align: center;
     margin-bottom: 2rem;
 }
+
 .menu-link {
     font-family: var(--font-action);
     font-size: 2rem;
     color: rgb(23, 23, 41);
 }
-.menu-link:hover{
-    color:royalblue;
+
+.menu-link:hover {
+    color: royalblue;
     transition: color 1s;
 
-} 
+}
+
 .social-media {
     position: absolute;
     bottom: 2rem;
@@ -171,8 +174,9 @@ header {
     justify-content: space-evenly;
 
 }
-.social-media i{
-    color:rgb(38, 38, 128);
+
+.social-media i {
+    color: rgb(38, 38, 128);
     height: 1.5rem;
     width: 1.5rem;
     max-width: 100%;
@@ -183,34 +187,64 @@ header {
     transition: background-color 0.8s;
 
 }
-.social-media i:hover{
+
+.social-media i:hover {
     background-color: rgb(141, 167, 245);
 }
 
-.banner h1{
+
+
+
+/* -------------- Bloco banner ---------- */
+.banner {
+    position: absolute;
+    width: 100%;
+    left: 200px;
+    top: 200px;
+}
+
+.img-wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgb(13, 13, 32);
+}
+
+
+.img-wrapper img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    animation: zoom 8s;
+}
+
+
+.banner h1 {
     color: white;
     font-size: 4rem;
     font-family: var(--font-primary);
     font-weight: 500;
-    text-shadow: .1rem .3rem .1px rgba(0,0,0,4);
+    text-shadow: .1rem .2rem .1px rgba(0, 0, 0, 2);
     line-height: 3.5rem;
-    margin-bottom: 2rem;
-    animation: movebanner 2s forwards; 
-    margin-right: 800px;
-    max-width: 100%;
+    margin-bottom: 4rem;
+    animation: movebanner 2s forwards;
+    letter-spacing: 1.1px;
 }
 
 .banner p {
     font-family: var(--font-secundary);
-    color: white;
+    color: #eee;
     font-size: 2rem;
     font-weight: 300;
-    text-shadow: 0.1rem 0.2rem  rgba(0,0,0,4);
+    text-shadow: 0.1rem 0.1rem rgba(0, 0, 0, 2);
     margin-bottom: 2rem;
-    animation: movebanner 3s; timing-function delay iteration-count direction fill-mode;
+    animation: movebanner 3s;
 }
 
-    .banner button{
+.banner button {
     font-family: var(--font-action);
     color: white;
     background-color: #5C258D;
@@ -224,52 +258,79 @@ header {
     cursor: pointer;
     animation: movebanner 3.5s;
 }
-.banner button:hover{
-    opacity: 0.8;
+
+.banner button:hover {
+    opacity: 0.5;
 }
 
-.conhecimentos{
-    max-height: 100%;
+@media (max-width: 800px) {
+    .banner {
+        left: 80px;
+        top: 200px;
+    }
+    
+    .banner h1 {
+        font-size: 3.5rem;
+        line-height: 3rem;
+        display: flex;
+        align-items: center;
+    }
+    .banner p {
+        font-size: 1.5rem;
+    }
+    .banner button {
+        font-size: 1rem;
+        padding: .8rem 2.5rem;
+    }
+    .hamburguer {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+}
+
+
+/* ---------- Conhecimentos ---------- */
+
+.sessao-conhecimentos {
+    background-color: rgb(226, 224, 224);
+    height: 100%;
+}
+.sessao-header {
+    display: flex;
+    justify-content: center;
+    background: white;
+
+}
+
+.conhecimentos {
+    background: #fff;
     height: 100vh;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
     justify-content: space-evenly;
- }
+    gap: .5rem;
+}
+
 .conhecimento {
     background-color: #5C258D;
     background: -webkit-linear-gradient(to right, #4389A2, #a79db1);
     background: linear-gradient(to right, #4389A2, #5C258D);
-    /*border: 1px solid black;*/
-    width: 30%;
-    height: 35%;
-    border-radius: 20px;
+    width: 300px;
+    height: 220px;
+    border-radius: 10px;
     padding: 10px;
-    padding-top: 20px;
+    cursor: pointer;
 }
 
-
-
-.sessao-conhecimentos{
-    background-color: rgb(226, 224, 224);
-    height: 100%;
-}
-.sessao-header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.sessao-header h1{
+.sessao-header h1 {
     font-family: var(--font-primary);
     font-size: 3rem;
-    color:#2e5664;
+    color: #2e5664;
     border-bottom: solid 3px rgb(38, 38, 128);
+    margin-top: 2rem;
     margin-bottom: 3rem;
-    
+
 }
 
 .conhecimento-header {
@@ -280,20 +341,21 @@ header {
     align-items: center;
 }
 
-.conhecimento-header i {
-    font-size: 3rem;
-    color: #c6cacc;
-    padding-left: 10px;
-  }
-  .conhecimento-header h3 {
+.conhecimento-header img {
+    width: 40px;
+    height: 50px;
+    margin-left: 1rem;
+}
+
+.conhecimento-header h3 {
     font-family: var(--font-secundary);
     font-size: 2rem;
     padding-left: 1rem;
     justify-content: center;
     color: #dbebf1;
-  }
+}
 
-  .conhecimento-text {
+.conhecimento-text {
     font-family: var(--font-secundary);
     margin-top: 1rem;
     padding: 5px;
@@ -302,35 +364,51 @@ header {
     color: white;
     font-size: 12pt;
     width: 100%;
-  }
+}
 
-
-
-
-
+@media (max-width: 900px) {
+    .conhecimentos {
+        height: 150vh;
+        gap: .4rem;
+    }
+    
+}
+@media (max-width: 650px) {
+    .conhecimentos {
+        height: 280vh;
+        gap: .4rem;
+    }
+    .conhecimento {
+        width: 450px;
+        height: 200px;
+    }
+    
+}
+/* -------------- PROJETOS ----------------- */ 
 .projetos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     height: 80vh;
 }
+
 .card {
     width: 18rem;
     height: 25rem;
     position: relative;
 }
-.card:hover .card-img-wrapper{
+
+.card:hover .card-img-wrapper {
     opacity: .9;
 }
 
-.card-img-wrapper{
+.card-img-wrapper {
     width: 100%;
     height: 100%;
     background-color: black;
     border-radius: .5rem;
-
-
 }
+
 .card-img-wrapper img {
     object-fit: cover;
     height: 100%;
@@ -349,27 +427,30 @@ header {
     visibility: hidden;
     transition: all 1s;
 }
-.card-info h2{
+
+.card-info h2 {
     font-family: var(--font-secundary);
     font-size: 2rem;
     font-weight: 500;
     color: rgb(219, 213, 213);
     margin-bottom: 10px;
 }
-.card-info h3{
+
+.card-info h3 {
     color: rgb(236, 56, 56);
     font-family: var(--font-action);
     font-weight: bolder;
     margin-bottom: 5px;
 }
 
-.card-info p{
+.card-info p {
     font-family: var(--font-action);
     color: rgb(245, 237, 237);
     width: 80%;
     font-weight: bold;
 }
-.card-info button{
+
+.card-info button {
     width: 8rem;
     height: 2rem;
     background-color: #5C258D;
@@ -384,7 +465,7 @@ header {
     border: none;
 }
 
-.card:hover .card-info{
+.card:hover .card-info {
     margin-bottom: 2;
     opacity: 1;
     visibility: visible;
@@ -400,35 +481,35 @@ header {
     justify-content: center;
 }
 
-.contato-wrapper{
+.contato-wrapper {
     width: 60%;
     display: flex;
     height: 30rem;
     box-shadow: 0rem 3rem 5rem rgb(0, 0, 0, .5);
 }
 
-.contato-left{
+.contato-left {
     width: 35%;
     background: url('contato.jpg');
     background-size: cover;
 }
 
-.contato-right{
+.contato-right {
     width: 65%;
     background-color: rgb(224, 220, 212);
     padding: 1rem 5rem 7rem 5rem;
 }
 
-.sessao-contato h1{
+.sessao-contato h1 {
     font-family: var(--font-primary);
     color: rgb(49, 49, 47);
     font-size: 3rem;
-    font-weight:lighter;
+    font-weight: lighter;
     text-align: center;
     width: 100%;
 }
 
-.sessao-contato form{
+.sessao-contato form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -463,19 +544,21 @@ header {
     transition: all 0.3s;
 }
 
-.field:focus ~ lable{
+.field:focus~lable {
     top: 0;
     font-size: 1rem;
 }
-.field:focus{
-    border-bottom:1px solid;
+
+.field:focus {
+    border-bottom: 1px solid;
 }
 
-.input-group textarea{
+.input-group textarea {
     padding-top: 0.5rem;
     max-width: 30rem;
     max-height: 5rem;
 }
+
 .btn-submit {
     width: 25rem;
     height: 2rem;
@@ -499,6 +582,7 @@ header {
     justify-content: center;
     align-items: center;
 }
+
 .orcamento-wrapper {
     width: 60%;
     height: 80%;
@@ -507,7 +591,8 @@ header {
     box-shadow: 0.1rem 0.3rem 0.5rem 0.3rem rgba(0, 0, 0, 0.5);
     position: relative;
 }
-.sessao-orcamento h1{
+
+.sessao-orcamento h1 {
     position: absolute;
     top: -2.5rem;
     left: 2rem;
@@ -521,22 +606,23 @@ header {
     font-weight: lighter;
     box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-}  
-.sessao-orcamento form{
+}
+
+.sessao-orcamento form {
     margin: 5rem;
     display: grid;
     grid-template-columns: auto 1fr;
     column-gap: 2rem;
-    row-gap: 2rem;   
+    row-gap: 2rem;
 }
 
-.sessao-orcamento label{
+.sessao-orcamento label {
     font-family: var(--font-secundary);
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.sessao-orcamento input[type="number"]{
+.sessao-orcamento input[type="number"] {
     font-family: var(--font-secundary);
     width: 4rem;
     font-size: 2rem;
@@ -545,6 +631,7 @@ header {
     border: none;
     padding: 0.3rem;
 }
+
 .btn-orcamento {
     width: 25rem;
     height: 4rem;
@@ -568,33 +655,35 @@ footer {
     justify-content: center;
     align-items: center;
 }
-.footer-content{
+
+.footer-content {
     width: 60%;
     display: flex;
     justify-content: space-evenly;
 }
 
-.footer-content p{
+.footer-content p {
     font-family: var(--font-secundary);
     font-size: 1.2rem;
     color: white;
 }
 
-.social-list a{
+.social-list a {
     margin: 0.2rem;
     color: white;
     font-size: 2rem;
     padding-left: 40px;
 }
 
-.social-list ul{
+.social-list ul {
     display: flex;
 
 }
+
 #link-topo {
     position: fixed;
-    right: 7rem;
-    bottom: 3rem;
+    right: 4rem;
+    bottom: 4rem;
     width: 3rem;
     height: 3rem;
     background-color: #5C258D;
@@ -607,233 +696,3 @@ footer {
     border-radius: 5px;
     box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
 }
-
-@media (max-width: 920px){
-    html {
-        font-size: 85%;
-    }
-    p {
-        font-size: 12pt;
-    }
-
-@media (max-width: 768px){
-    html {
-        font-size: 55%;
-    }
-    p {
-        font-size: 11pt;
-    }
-    .banner h1{
-        color: white;
-        font-size: 4rem;
-        font-family: var(--font-primary);
-        font-weight: 500;
-        text-shadow: .1rem .3rem .1px rgba(0,0,0,4);
-        line-height: 3.5rem;
-        margin-bottom: 2rem;
-        animation: movebanner 2s forwards; 
-        margin-right: 350px;
-        max-width: 100%;
-    }
-
-    .banner {
-        position: absolute;
-        width: 100%;
-        top: 200px;
-        left: 100px;
-    
-    }
-    
-}
-@media (max-width: 650px){
-    html {
-        font-size: 50%;
-    }
-    p {
-        font-size: 10pt;
-    }
-    .banner h1{
-        color: white;
-        font-size: 4rem;
-        font-family: var(--font-primary);
-        font-weight: 500;
-        text-shadow: .1rem .3rem .1px rgba(0,0,0,4);
-        line-height: 4rem;
-        margin-bottom: 2rem;
-        animation: movebanner 2s forwards; 
-        margin-right: 150px;
-        max-width: 100%;
-    }
-
-    .banner {
-        position: absolute;
-        width: 100%;
-        top: 200px;
-        left: 100px;
-    
-    }
-    
-}
-
-@media (max-width: 600px){
-    html {
-        font-size: 50%;
-    }
-    p {
-        font-size: 8pt;
-    }
-    .banner h1{
-        color: white;
-        font-size: 4rem;
-        font-family: var(--font-primary);
-        font-weight: 500;
-        text-shadow: .1rem .3rem .1px rgba(0,0,0,4);
-        line-height: 4rem;
-        margin-bottom: 2rem;
-        animation: movebanner 2s forwards; 
-        margin-right: 150px;
-        max-width: 100%;
-    }
-
-    .conhecimento {
-        background-color: #5C258D;
-        background: -webkit-linear-gradient(to right, #4389A2, #a79db1);
-        background: linear-gradient(to right, #4389A2, #5C258D);
-        /*border: 1px solid black;*/
-        width: 25%;
-        height: 30%;
-        border-radius: 20px;
-        padding: 10px;
-        padding-top: 20px;
-    }
-
-    
-    .banner {
-        position: absolute;
-        width: 100%;
-        top: 200px;
-        left: 100px;
-    
-    }
-    .projetos {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        margin-top: 80px;
-        height: 60vh;
-    }
-}
-    
-@media (max-width: 550px) {
-    html {
-        font-size: 55%;
-    }
-    p {
-        font-size: 8pt;
-    }
-    .banner h1{
-        color: white;
-        font-size: 6rem;
-        font-family: var(--font-primary);
-        font-weight: 500;
-        text-shadow: .1rem .3rem .1px rgba(0,0,0,4);
-        line-height: 6rem;
-        margin-bottom: 2rem;
-        animation: movebanner 2s forwards; 
-        margin-right: 150px;
-        max-width: 100%;
-    }
-
-    .conhecimento {
-        background-color: #5C258D;
-        background: -webkit-linear-gradient(to right, #4389A2, #a79db1);
-        background: linear-gradient(to right, #4389A2, #5C258D);
-        /*border: 1px solid black;*/
-        width: 25%;
-        height: 30%;
-        border-radius: 20px;
-        padding: 10px;
-        padding-top: 20px;
-    }
-    .banner {
-        position: absolute;
-        width: 100%;
-        top: 200px;
-        left: 100px;
-    
-    }
-}
-}
-
-    
-@media (max-width: 550px){
-    html {
-        font-size: 40%;
-    }
-    p {
-        font-size: 7pt;
-    }
-
-    @media (max-width: 450px){
-        html {
-            font-size: 35%;
-        }
-        p {
-            font-size: 7pt;
-        }
-        .card {
-            width: 18rem;
-            height: 25rem;
-            position: relative;
-            height: 50vh;
-        }
-        .sessao-contato {
-            width: 100%;
-            height: 70vh;
-            background-color: rgb(71, 69, 69);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .orcamento-wrapper {
-            width: 80%;
-            height: 50%;
-            background-color: rgb(236, 236, 236, 0.6);
-            border-radius: 10px;
-            box-shadow: 0.1rem 0.3rem 0.5rem 0.3rem rgba(0, 0, 0, 0.5);
-            position: relative;
-        }
-        .banner button{
-            font-family: var(--font-action);
-            color: white;
-            background-color: #5C258D;
-            background: -webkit-linear-gradient(to right, #4389A2, #5C258D);
-            background: linear-gradient(to right, #4389A2, #5C258D);
-            padding: 1rem 4rem;
-            border: none;
-            font-size: 2.5rem;
-            letter-spacing: 0.1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            animation: movebanner 3.5s;
-        }
-
-        }
-
-        @media (max-width: 370px){
-            html {
-                font-size: 30%;
-            }
-            p {
-                font-size: 6pt;
-            }
-        }
-        
-}
-
-@media (min-width: 760px) {
-    .btn-orcamento {
-        width: 20rem;
-        height: 4rem;
-        margin-bottom: auto;
-    }}
