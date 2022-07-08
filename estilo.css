@@ -270,7 +270,7 @@ header {
     }
     
     .banner h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
         line-height: 3rem;
         display: flex;
         align-items: center;
@@ -283,8 +283,8 @@ header {
         padding: .8rem 2.5rem;
     }
     .hamburguer {
-        width: 3rem;
-        height: 3rem;
+        width: 2.5rem;
+        height: 2.5rem;
     }
     .hamburguer {
         right: 2rem;
@@ -316,6 +316,7 @@ header {
     gap: .5rem;
 }
 
+
 .conhecimento {
     background-color: #5C258D;
     background: -webkit-linear-gradient(to right, #4389A2, #a79db1);
@@ -324,8 +325,8 @@ header {
     height: 220px;
     border-radius: 10px;
     padding: 10px;
-    cursor: pointer;
 }
+
 
 .sessao-header h1 {
     font-family: var(--font-primary);
@@ -358,6 +359,7 @@ header {
     justify-content: center;
     color: #f1f9fc;
 }
+
 
 .conhecimento-text {
     font-family: var(--font-secundary);
@@ -477,36 +479,41 @@ header {
 .card:hover .card-info {
     margin-bottom: 2;
     opacity: 1;
+    background: rgba(13, 13, 32, 0.8);
     visibility: visible;
+    width: 100%;
+    cursor: pointer;
 }
 
 
-/*
 
+/* ------------------- contato -----------------------*/
+
+/*
 .sessao-contato {
     width: 100%;
     height: 100vh;
-    background-color: rgb(71, 69, 69);
+    background-color: rgb(56, 53, 53);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .contato-wrapper {
-    width: 60%;
+    width: 60rem;
     display: flex;
     height: 30rem;
     box-shadow: 0rem 3rem 5rem rgb(0, 0, 0, .5);
 }
 
 .contato-left {
-    width: 35%;
+    width: 10rem;
     background: url('contato.jpg');
     background-size: cover;
 }
 
 .contato-right {
-    width: 65%;
+    width: 40rem;
     background-color: rgb(224, 220, 212);
     padding: 1rem 5rem 7rem 5rem;
 }
@@ -582,7 +589,7 @@ header {
     border-radius: 0.3rem;
     box-shadow: 0 .8rem .8rem rgb(0, 0, 0, .5);
     border: none;
-}
+}*/
 
 
 /* ---------------- ORCAMENTO --------------------- */
@@ -701,6 +708,15 @@ footer {
 
 }
 
+
+@media (max-width: 650px ) {
+    .footer-content p {
+        font-size: .8rem;
+        margin-left: .5rem;
+    }
+
+}
+
 #link-topo {
     position: fixed;
     right: 4rem;
@@ -716,4 +732,10 @@ footer {
     color: white;
     border-radius: 5px;
     box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 800px) {
+    #link-topo {
+        bottom: 2rem;
+        right: 2rem;
+    }
 }
