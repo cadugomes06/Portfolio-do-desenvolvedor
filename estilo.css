@@ -15,6 +15,7 @@ html {
 }
 body{
     max-width: 100%;
+    background-color: black;
 }
 
 :root {
@@ -260,7 +261,7 @@ header {
 }
 
 .banner button:hover {
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 @media (max-width: 800px) {
@@ -302,12 +303,12 @@ header {
 .sessao-header {
     display: flex;
     justify-content: center;
-    background: white;
+    background: black;
 
 }
 
 .conhecimentos {
-    background: #fff;
+    background: black;
     height: 100vh;
     display: flex;
     flex-wrap: wrap;
@@ -318,24 +319,29 @@ header {
 
 
 .conhecimento {
-    background-color: #5C258D;
-    background: -webkit-linear-gradient(to right, #4389A2, #a79db1);
-    background: linear-gradient(to right, #4389A2, #5C258D);
+    background: #0f2027; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: 1px 1px 4px 1px rgba(255, 255, 255, 0.3);
     width: 300px;
     height: 220px;
     border-radius: 10px;
     padding: 10px;
 }
 
+.conhecimento:hover {
+    border: 2px solid #4389A2;
+    transition: .5s;
+}
+
 
 .sessao-header h1 {
     font-family: var(--font-primary);
     font-size: 3rem;
-    color: #2e5664;
+    color: #487585;
     border-bottom: solid 3px rgb(38, 38, 128);
     margin-top: 2rem;
     margin-bottom: 3rem;
-
 }
 
 .conhecimento-header {
@@ -399,41 +405,66 @@ header {
     margin-bottom: 4rem;
 }
 
+.sessao-headerProject {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    color: #487585;
+    padding-top: 6rem;
+    margin-bottom: 3rem;
+    background-color: black;
+}
+
+.sessao-headerProject h1 {
+    border-bottom: solid 3px rgb(38, 38, 128);
+}
+
 .card {
     width: 18rem;
     height: 25rem;
     position: relative;
     margin: 1rem  0.5rem;
+    box-shadow: 1px 1px 6px 1px rgba(66, 64, 64, 0.5);
+    border-radius: 0px;
 }
 
 .card:hover .card-img-wrapper {
-    opacity: .9;
+    opacity: 1;
 }
 
 .card-img-wrapper {
     width: 100%;
     height: 100%;
     background-color: black;
-    border-radius: .5rem;
 }
 
 .card-img-wrapper img {
     object-fit: cover;
     height: 100%;
     width: 100%;
-    border-radius: .5rem;
+    border-radius: 8px;
     opacity: .8;
     transition: opacity 0.5s;
 }
 
 .card-info {
+    width: 100%;
+    display: block;
     position: absolute;
     bottom: 0;
-    padding: 2rem;
-    text-shadow: 0 0.8rem 5rem rgb(0, 0, 0, .5);
+    padding: 40px;
     opacity: 0;
+    background-color: black;
     visibility: hidden;
-    transition: all 1s;
+    transition: all .5s;
+    border-radius: 0 0 8px 8px;
+}
+
+.card-info img {
+    width: 20px;
+    height: 20px;
 }
 
 .card-info h2 {
@@ -445,16 +476,16 @@ header {
 }
 
 .card-info h3 {
-    color: rgb(92, 59, 236);
+    color: rgb(179, 57, 209);
     font-family: var(--font-action);
     font-weight: bolder;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .card-info p {
     font-family: var(--font-action);
     color: rgb(245, 237, 237);
-    width: 80%;
+    width: 100%;
     font-weight: bold;
 }
 
@@ -677,7 +708,7 @@ header {
 footer {
     width: 100%;
     height: 8rem;
-    background-color: rgb(68, 66, 66);
+    background-color: rgb(20, 19, 19);
     display: flex;
     justify-content: center;
     align-items: center;
