@@ -38,6 +38,11 @@ body{
     animation: movebanner 1s; 
     z-index: 500;
 }
+@media (max-width: 600px) {
+    .hamburguer {
+        right: 2rem; 
+    }
+}
 
 *.line {
     width: 100%;
@@ -103,8 +108,6 @@ header {
     100% {
         transform: scale(1);
     }
-
-
 }
 
 @keyframes movebanner {
@@ -112,11 +115,8 @@ header {
         transform: translateY(15rem) rotateY(-30deg);
         opacity: 0.1;
     }
-
     100% {
         transform: translateY(0.1rem) rotateY(0deg);
-
-
     }
 }
 
@@ -129,7 +129,6 @@ header {
     right: -20rem;
     transition: all 1s;
     z-index: 490;
-
 }
 
 .show-menu .sidebar {
@@ -147,7 +146,6 @@ header {
     top: 25%;
     left: 25%;
     transform: translateX(-50%, -50%);
-
 }
 
 .menu-item {
@@ -283,20 +281,12 @@ header {
         font-size: 1rem;
         padding: .8rem 2.5rem;
     }
-    .hamburguer {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-    .hamburguer {
-        right: 2rem;
-        top: 2rem;
-    }
 }
 
 /* ----------- KNOWLEDGE --------- */
 
 .knowledge {
-    height: 140vh;
+    max-height: max-content;
     width: 100%;
     background: white;
 }
@@ -310,16 +300,22 @@ header {
     font-family: var(--font-primary);
     color: #4389A2;
     font-size: 1.6rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 .all-cards {
     width: 100%;
-    height: max-content;
+    max-height: max-content;
     display: flex;
     justify-content: space-evenly;
-    padding: 0.5rem 2rem 0.5rem 2rem;
-    gap: 4rem;
+    padding: 0 2rem 2rem 2rem;
+    gap: 1rem;
     flex-wrap: wrap;
+}
+@media (max-width: 600px) {
+    .header-knowledge {
+        font-size: 1.2rem;
+        margin-bottom: 0;
+    }
 }
 
 .card-container {
@@ -340,12 +336,14 @@ header {
 .back {
     transform: rotateY(180deg);
 }
+
 .card-container:hover .front{
     transform: rotateY(-180deg);
 }
 .card-container:hover .back{
     transform: rotateY(0deg);
 }
+
 .front, .back {
     width: 200px;
     height: 300px;
@@ -538,194 +536,6 @@ header {
 }
 
 
-
-/* ------------------- contato -----------------------*/
-
-/*
-.sessao-contato {
-    width: 100%;
-    height: 100vh;
-    background-color: rgb(56, 53, 53);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.contato-wrapper {
-    width: 60rem;
-    display: flex;
-    height: 30rem;
-    box-shadow: 0rem 3rem 5rem rgb(0, 0, 0, .5);
-}
-
-.contato-left {
-    width: 10rem;
-    background: url('contato.jpg');
-    background-size: cover;
-}
-
-.contato-right {
-    width: 40rem;
-    background-color: rgb(224, 220, 212);
-    padding: 1rem 5rem 7rem 5rem;
-}
-
-.sessao-contato h1 {
-    font-family: var(--font-primary);
-    color: rgb(49, 49, 47);
-    font-size: 3rem;
-    font-weight: lighter;
-    text-align: center;
-    width: 100%;
-}
-
-.sessao-contato form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.field {
-    background: transparent;
-    border: none;
-    width: 30rem;
-    font-size: 1.2rem;
-    font-family: var(--font-action);
-    border-bottom: 2px dashed;
-    height: 2.5rem;
-    outline: none;
-    margin: 2rem 0rem;
-
-}
-
-.input-group {
-    position: relative;
-
-}
-
-.field-lable {
-    position: absolute;
-    left: 0px;
-    font-family: var(--font-secundary);
-    font-weight: 200;
-    text-transform: uppercase;
-    top: 1rem;
-    font-size: 1.5rem;
-    transition: all 0.3s;
-}
-
-.field:focus~lable {
-    top: 0;
-    font-size: 1rem;
-}
-
-.field:focus {
-    border-bottom: 1px solid;
-}
-
-.input-group textarea {
-    padding-top: 0.5rem;
-    max-width: 30rem;
-    max-height: 5rem;
-}
-
-.btn-submit {
-    width: 25rem;
-    height: 2rem;
-    background-color: #5C258D;
-    background: -webkit-linear-gradient(to right, #4389A2, #5C258D);
-    background: linear-gradient(to right, #4389A2, #5C258D);
-    font-family: var(--font-secundary);
-    font-size: 1.3rem;
-    color: white;
-    border-radius: 0.3rem;
-    box-shadow: 0 .8rem .8rem rgb(0, 0, 0, .5);
-    border: none;
-}*/
-
-
-/* ---------------- ORCAMENTO --------------------- */
-/*
-.sessao-orcamento {
-    width: 100%;
-    height: 100vh;
-    background: url('imagens/bg-orcamento.jpg');
-    object-fit: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.orcamento-wrapper {
-    width: 800px;
-    height: 500px;
-    background-color: rgb(236, 236, 236, 0.6);
-    border-radius: 10px;
-    box-shadow: 0.1rem 0.3rem 0.5rem 0.3rem rgba(0, 0, 0, 0.5);
-    position: relative;
-}
-@media (max-width: 900px) {
-    .orcamento-wrapper {
-        width: 500px;
-    }
-
-}
-
-.sessao-orcamento h1 {
-    position: absolute;
-    top: -2.5rem;
-    left: 2rem;
-    background-color: #5C258D;
-    background: -webkit-linear-gradient(to right, #4389A2, #5C258D);
-    background: linear-gradient(to right, #4389A2, #5C258D);
-    padding: 0 3rem;
-    color: rgb(240, 236, 236);
-    font-family: var(--font-primary);
-    font-size: 3rem;
-    font-weight: lighter;
-    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-.sessao-orcamento form {
-    margin: 5rem;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    column-gap: 2rem;
-    row-gap: 2rem;
-}
-
-.sessao-orcamento label {
-    font-family: var(--font-secundary);
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.sessao-orcamento input[type="number"] {
-    font-family: var(--font-secundary);
-    width: 4rem;
-    font-size: 2rem;
-    outline: none;
-    border-radius: 5px;
-    border: none;
-    padding: 0.3rem;
-}
-
-.btn-orcamento {
-    width: 25rem;
-    height: 4rem;
-    background-color: #5C258D;
-    background: -webkit-linear-gradient(to right, #4389A2, #5C258D);
-    background: linear-gradient(to right, #4389A2, #5C258D);
-    font-family: var(--font-secundary);
-    font-size: 1.3rem;
-    color: white;
-    border-radius: 0.3rem;
-    box-shadow: 0 .8rem .8rem rgb(0, 0, 0, .5);
-    border: none;
-    max-width: 100%;
-}*/
-
 footer {
     width: 100%;
     height: 8rem;
@@ -747,26 +557,20 @@ footer {
     font-size: 1.2rem;
     color: white;
 }
-
-.social-list a {
-    margin: 0.2rem;
-    color: white;
-    font-size: 2rem;
-    padding-left: 40px;
-}
-
-.social-list ul {
+.icons-footer {
     display: flex;
-
+    gap: 2rem;
+    margin-left: 4rem;
 }
 
 
 @media (max-width: 650px ) {
-    .footer-content p {
-        font-size: .8rem;
-        margin-left: .5rem;
+    footer  {
+        padding: 0 1.5rem ;
     }
-
+    .icons-footer {
+        margin-left: 2rem;
+    }
 }
 
 #link-topo {
